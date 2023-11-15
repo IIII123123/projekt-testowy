@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lasy Wietnamu</title>
+    <link rel="stylesheet" href="arkusz.css">
+  
+</head>
+
+<body>
+    <header>
+        <h1>Lasy Wietnamu</h1>
+    </header>
+    <video autoplay muted loop>
+        <source src="Vietnam War, 1970 CBS camera rolls as platoon comes under fire.mp4" type="video/mp4">
+    </video>
+
+
+    <nav>
+        <a href="historia.html">Historia</a>
+        <a href="biodiversita.html">Biodiversita</a>
+        <a href="ekologia.html">Ekologia</a>
+        <a href="wojna.html">Wpływ wojny</a>
+    </nav>
+
+    <section id="historia" onclick="toggleSectionContent(this)">
+        <h2>Historia Lsów Wietnamu</h2>
+        <p>Tutaj umieść informacje na temat historii lasów w Wietnamie.</p>
+        <p>Dodatkowe informacje itp.</p>
+    </section>
+
+    <section id="biodiversita" onclick="toggleSectionContent(this)">
+        <h2>Biodiversita</h2>
+        <p>Opisz różnorodność biologiczną lasów w Wietnamie.</p>
+    </section>
+
+    <section id="ekologia" onclick="toggleSectionContent(this)">
+        <h2>Ekologia</h2>
+        <p>Omów ekologię lasów w Wietnamie.</p>
+    </section>
+
+    <section id="wojna" onclick="toggleSectionContent(this)">
+        <h2>Wpływ Wojny Wietnamskiej</h2>
+        <p>Przeanalizuj wpływ wojny w Wietnamie na tamtejsze lasy.</p>
+    </section>
+
+    <footer>
+        <div id="clock"></div>
+        &copy; 2023 Lasy Wietnamu
+    </footer>
+
+    <script>
+        function toggleSectionContent(section) {
+            const paragraphs = section.querySelectorAll('p');
+            paragraphs.forEach(paragraph => {
+                paragraph.style.display = paragraph.style.display === 'none' ? 'block' : 'none';
+            });
+
+            section.style.backgroundColor = section.style.backgroundColor === 'transparent' ? '#f4f4f4' : 'transparent';
+        }
+
+        // JavaScript do obsługi akordeonu
+        const accordions = document.querySelectorAll('.accordion');
+
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', function () {
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                if (panel.style.display === 'block') {
+                    panel.style.display = 'none';
+                } else {
+                    panel.style.display = 'block';
+                }
+            });
+        });
+
+        // JavaScript do obsługi zegara w stopce
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').innerText = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+
+        function toggleSectionContent(section) {
+            const paragraphs = section.querySelectorAll('p');
+            paragraphs.forEach(paragraph => {
+                paragraph.style.display = paragraph.style.display === 'none' ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+
+</html>

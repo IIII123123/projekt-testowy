@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #fff;
+}
+
+header {
+    background-color: #00912b;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+}
+
+section {
+    padding: 20px;
+    cursor: pointer;
+    background-color: #f4f4f4;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+section:hover {
+    background-color: #ddd;
+}
+
+section h2 {
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+section:hover h2 {
+    color: #007bff;
+}
+
+section p {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+section:hover p {
+    display: block;
+    opacity: 1;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.accordion {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    margin: 5px 0;
+}
+
+.active, .accordion:hover {
+    background-color: #ddd;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: white;
+}

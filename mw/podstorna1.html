@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>podstrona</title>
+    <link rel="stylesheet" href="arkusz.css">
+
+</head>
+<body>
+    <header>
+        <h1>Lasy Wietnamu</h1>
+    </header>
+
+    <nav>
+        <a href="#historia">Historia</a>
+        <a href="#biodiversita">Biodiversita</a>
+        <a href="#ekologia">Ekologia</a>
+        <a href="#wojna">Wpływ wojny</a>
+    </nav>
+
+    <section id="historia">
+        <h2 class="accordion">Historia Lsów Wietnamu</h2>
+        <div class="panel">
+            <p>Tutaj umieść informacje na temat historii lasów w Wietnamie.</p>
+            <p>Dodatkowe informacje itp.</p>
+        </div>
+    </section>
+
+    <section id="biodiversita">
+        <h2>Biodiversita</h2>
+        <p>Opisz różnorodność biologiczną lasów w Wietnamie.</p>
+    </section>
+
+    <section id="ekologia">
+        <h2>Ekologia</h2>
+        <p>Omów ekologię lasów w Wietnamie.</p>
+    </section>
+
+    <section id="wojna">
+        <h2>Wpływ Wojny Wietnamskiej</h2>
+        <p>Przeanalizuj wpływ wojny w Wietnamie na tamtejsze lasy.</p>
+    </section>
+
+    <footer>
+        <div id="clock"></div>
+        &copy; 2023 Lasy Wietnamu
+    </footer>
+
+    <script>
+        // JavaScript do obsługi akordeonu
+        const accordions = document.querySelectorAll('.accordion');
+
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                if (panel.style.display === 'block') {
+                    panel.style.display = 'none';
+                } else {
+                    panel.style.display = 'block';
+                }
+            });
+        });
+
+        // JavaScript do obsługi zegara w stopce
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').innerText = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
